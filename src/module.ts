@@ -1,6 +1,6 @@
 import { defineNuxtModule, addPlugin, createResolver } from '@nuxt/kit'
 import { createIcons, CreateIconsOptions } from './lib/create-icons'
-import defu from 'defu'
+// import defu from 'defu'
 
 export interface ModuleOptions extends Omit<CreateIconsOptions, 'rootDir'> {
 }
@@ -27,7 +27,8 @@ export default defineNuxtModule<ModuleOptions>({
       }
     })
 
-    nuxt.options.runtimeConfig.public.nuxtFavicons = defu(nuxt.options.runtimeConfig.public.nuxtFavicons, options)
+    // nuxt.options.runtimeConfig.public.nuxtFavicons = defu(nuxt.options.runtimeConfig.public.nuxtFavicons, options)
+    nuxt.options.runtimeConfig.public.nuxtFavicons = options
 
     addPlugin(resolver.resolve('./runtime/plugin'))
   },
